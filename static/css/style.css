@@ -1,0 +1,181 @@
+body{background-color: black;}
+#menu a:hover{color: white;text-decoration:none;font-weight: bold;}
+#menu a:active{color: white;text-decoration:none;}
+#menu a:visited{color: white;text-decoration:none;}
+#menu a:link{color: white;text-decoration:none;}
+#container{
+    width:900px;
+    min-height:500px;
+    margin:0 auto;
+    background-color:white;
+}
+
+
+
+#top{
+    width:900px;
+    height:150px;
+    background-color:slategray;
+    color: white;
+    transition:background .3s ease,background .2s linear,width 2s, height 1s;
+    -moz-transition:background .3s ease,background .3s linear,width 1s, height 1s, -moz-transform 1s;
+    -o-transition:background .3s ease,background .3s linear;
+    -webkit-transition:background .3s ease,background .2s linear,width 1s, height 1s, -webkit-transform 1s;
+    -ms-transition:background .3s ease .3s,width 2s, height 2s, -o-transform 2s;
+
+}
+#top:hover{background-color:lightsteelblue; height: 150px;color:black}
+
+.slogan {
+    text-align: center;
+    line-height: 150px;
+    font-size: 30px;
+}
+
+
+#menu{
+    width:800px;
+    height:40px;
+    margin-top:-20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:steelblue;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    line-height: 40px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border:1px solid whitesmoke;
+}
+
+#categories{
+    width: 200px;
+    height: 250px;
+    background-color: slategray;
+    margin-left: 10px;
+    border-radius: 5px;
+    float: left ;
+}
+
+#contents{
+    width: 650px;
+    min-height: 200px;
+    background-color: slategray;
+    border-radius: 5px;
+    padding: 10px;
+    float: left;
+    margin-left: 10px;
+
+}
+
+ #content{
+    width: 625px;
+    min-height: 100px;
+    margin:5px auto 5px auto;
+    padding:5px 5px 10px 5px ;
+    background-color: white;
+    border-radius: 5px;
+    opacity: 50;
+    transition:background .3s ease,background .2s linear,width 2s, height 1s;
+    -moz-transition:background .3s ease,background .3s linear,width 1s, height 1s, -moz-transform 1s;
+    -o-transition:background .3s ease,background .3s linear;
+    -webkit-transition:background .3s ease,background .2s linear,width 1s, height 1s, -webkit-transform 1s;
+    -ms-transition:background .3s ease .3s,width 2s, height 2s, -o-transform 2s;
+ }
+
+ #content:hover{  }
+
+ .title{
+     font-family: "Lucida Grande";
+     font-size: 18px;
+     font-weight: bold;
+     clear: both;
+     margin-bottom: 10px;
+     border-bottom: 1px solid black;
+     padding:0 10px 0 10px;
+     text-transform: capitalize;
+ }
+
+ .text{
+     font-family: "Lucida Grande";
+     font-size: 12px;
+     clear: both;
+     padding:0 10px 0 10px;
+     margin-bottom: 10px;
+ }
+
+#comment{
+     width: 570px;
+     min-height: 40px;
+     background-color: darkgray;
+     border-radius: 5px;
+     margin:10px 0 10px 30px;
+     font-family: "Lucida Grande";
+     font-size: 11px;
+     clear: both;
+     padding:0 10px 5px 10px;
+     color: black;
+ }
+
+#comment .title {
+     font-family: "Lucida Grande";
+     font-size: 13px;
+     font-weight: bold;
+     clear: both;
+     margin-bottom: 10px;
+     border-bottom: 1px solid darkslategray;
+     padding:5px 10px 0 10px;
+     text-transform: capitalize;
+}
+
+#comment .text{
+     font-family: "Lucida Grande";
+     font-size: 12px;
+     clear: both;
+     padding:0 10px 0 10px;
+     margin-bottom: 10px;
+}
+
+#comments{
+     width: 530px;
+     min-height: 40px;
+     background-color: lightgray;
+     border-radius: 5px;
+     margin:10px 0 5px 25px;
+     font-family: "Lucida Grande";
+     font-size: 11px;
+     clear: both;
+     padding:5px 10px 5px 10px;
+     color: black;
+ }
+
+#comments .title {
+     font-family: "Lucida Grande";
+     font-size: 13px;
+     font-weight: bold;
+     clear: both;
+     margin-bottom: 10px;
+     border-bottom: 1px solid graytext;
+     padding:0 10px 0 10px;
+     text-transform: capitalize;
+}
+
+#comments .text{
+     font-family: "Lucida Grande";
+     font-size: 12px;
+     clear: both;
+     padding:0 10px 0 10px;
+     margin-bottom: 10px;
+}
+
+ #footer{
+    width:900px;
+    height:100px;
+    background-color:slategray;
+    line-height: 150px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+     margin-top: 20px;
+}

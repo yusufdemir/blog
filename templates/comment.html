@@ -1,0 +1,24 @@
+
+<div id="comment">
+    <div class="title">
+        {{ commenty.title }}
+    </div>
+    <div class="text">
+        {{ commenty.text }}
+    </div>
+
+
+{% if commenty.get_sub %}
+    {%  for commenty in commenty.get_sub %}
+        <div id="comments">
+            <div class="title">
+                {{ commenty.title }}
+            </div>
+            <div class="text">
+                {{ commenty.text }}
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+
+</div>

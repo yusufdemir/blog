@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block page %}Index{% endblock %}
+
+{% block Content %}
+    {% for p in post %}
+        <div id="content">
+            <div class="title">
+                {{ p.title }}
+            </div>
+            <div class="text">
+                {{ p.text }}
+            </div>
+        <br>
+                 {% for commenty in p.comments.all %}
+                    {% include "comment.html" %}
+                 {% endfor %}
+
+        </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,76 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ysfdmr.com</title>
+        <link rel="stylesheet" type="text/css" href="/static/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    </head>
+<body>
+
+<div id="container">
+    <div id="top">
+        <div class="slogan">Yusuf DEMİR ~ blog </div>
+    </div>
+    <div id="menu">
+        {% if not is_logged_in %}
+            {% if is_superuser %}
+                <a href="/admin/">*ADMIN*</a>
+            {% endif %}
+            <a href="/index/">{% trans "HOME" %}</a>
+            <a href="/categories/">{% trans "CATEGORIES" %}</a>
+
+        {% endif %}
+    </div>
+
+    <div id="categories">
+        {{ cat }}
+        Test1<br>
+        test2<br>
+        test3<br>
+    </div>
+
+    <div id="contents">
+
+        <div id="content">
+            <div class="title">
+                Title
+            </div>
+            <div class="text">
+                Lorem ipsum
+            </div>
+
+            <div id="comment">
+                <div class="title">
+                    Author
+                </div>
+                <div class="text">
+                    Test comment
+                </div>
+                <div id="comments">
+                    <div class="title">
+                        Author
+                    </div>
+                    <div class="text">
+                        Test comments
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        {% block Content %}
+        {% endblock %}
+    </div>
+    {% block Footer %}
+        <div style="clear: both;"></div>
+        <div id="footer">
+
+            footer
+
+        </div>
+    {% endblock %}
+
+</div>
+</body>
+</html>
