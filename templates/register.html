@@ -4,11 +4,27 @@
 {% block Content %}
     <div id ="content">
 
-    <form method="post" action="/reg/">
-        {% csrf_token %}
+        <form action="." method="post">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          {% for field in form %}
+            {% if field.name != "username" %}
+              <div class="field-wrapper">
+                <div class="label-wrapper">
+                  {{ field.label_tag }}
+                  {% if field.field.required %}<span class="required">*</span>{% endif %}
+                </div>
+                <div class="value-wrapper">
+                  {{ field }}
+                  {{ field.errors }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          <div class="submit-wrapper">
+            <input type="submit" value="Sign Up"/>
+          </div>
+        </form>
 
-        {{ form.as_p }}<br>
-        <input type="submit" value="gönder">
-    </form>
     </div>
 {% endblock %}

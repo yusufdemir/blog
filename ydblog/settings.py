@@ -136,6 +136,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'account.context_processors.loginForm',
 )
 
+AUTHENTICATION_BACKENDS = ('account.views.EmailAuthBackend',)
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
 # the site admins on every HTTP 500 error when DEBUG=False.

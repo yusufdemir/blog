@@ -33,11 +33,18 @@
 
         </div>
 
-        <div id="categories">
+        <div id="loginbox">
           {% if not user.is_authenticated %}
             {{ loginform }}
           {% else %}
-              {% trans "Welcome" %} {{ first_name }}
+              {% trans "Welcome" %}<br>
+              {% if user.first_name == "" %}
+                {{ user.email }}
+                <br>
+                <a href="/profile/"> {% trans "Create a Profile" %}</a>
+              {% else %}
+                {{ user.first_name }}
+              {% endif %}
           {% endif %}
         </div>
     </div>

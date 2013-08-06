@@ -3,9 +3,26 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from django.template import RequestContext
 from account.forms import *
-from account.models import Profile
-from django.contrib.auth import *
-import post
+from django.contrib.auth.models import User, check_password
+from forms import SignUpForm
+from random import choice
+from string import letters
+
+class EmailAuthBackend(object):
+    def authenticate(self, username=None, password=None):
+        try:
+            user = User.objects.get(email=username)
+            if user.check_password(password):
+                return user
+        except User.DoesNotExist:
+            return None
+
+    def get_user(self, user_id):
+        try:
+            return User.objects.get(pk=user_id)
+        except User.DoesNotExist:
+            return None
+
 
 
 def test(request):
@@ -16,15 +33,20 @@ def test(request):
 
 def register(request):
     if request.method == 'POST':
-        form = Registration(request.POST)
+        data = request.POST.copy() # so we can manipulate data
+
+        # random username
+        data['username'] = ''.join([choice(letters) for i in xrange(30)])
+        form = SignUpForm(data)
+
         if form.is_valid():
-            cleaned = form.cleaned_data
-            form.save()
-            return HttpResponseRedirect('/kayittamam/')
-        return render_to_response("register.html", {'form':Registration},
-                                  context_instance=RequestContext(request))
-    form = Registration()
-    return render(request, "register.html", {'form': form})
+            user = form.save()
+            return HttpResponseRedirect('/sign_up_success.html')
+    else:
+        form = SignUpForm()
+
+    return render_to_response('login.html', {'form':form},
+                              context_instance=RequestContext(request))
 
 
 

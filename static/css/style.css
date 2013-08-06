@@ -55,6 +55,33 @@ body{background-color: black;}
     background-color: white;
 }
 
+#loginbox{
+    width: 190px;
+    min-height: 50px;
+    background-color: slategray;
+    margin-left: 10px;
+    border-radius: 5px;
+    float: left ;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    padding-top: 15px;
+}
+#loginbox a:link {
+    text-align: center;
+    color: white;
+    display: block;
+    line-height:15px;
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+
+#loginbox a:hover{
+    background-color: cornflowerblue;
+}
+
 #categories{
     width: 200px;
     height: 250px;
