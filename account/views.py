@@ -1,4 +1,6 @@
 # Create your views here.
+from django.contrib.auth import logout
+from django.core.context_processors import request
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from django.template import RequestContext
@@ -7,6 +9,10 @@ from django.contrib.auth.models import User, check_password
 from forms import SignUpForm
 from random import choice
 from string import letters
+
+
+def logout_view(self):
+    logout(request('/index/'))
 
 class EmailAuthBackend(object):
     def authenticate(self, username=None, password=None):

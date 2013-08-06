@@ -35,16 +35,19 @@
 
         <div id="loginbox">
           {% if not user.is_authenticated %}
-            {{ loginform }}
+            {% trans "Welcome Guest" %}<br><br>
+            <a href="/register/">{% trans "Sing in" %}</a>
+            <a href="/login/">{% trans "Sing up" %}</a>
           {% else %}
               {% trans "Welcome" %}<br>
               {% if user.first_name == "" %}
                 {{ user.email }}
-                <br>
+                <br><br>
                 <a href="/profile/"> {% trans "Create a Profile" %}</a>
               {% else %}
                 {{ user.first_name }}
               {% endif %}
+                <a href="/logout/">{% trans "Logout" %}</a>
           {% endif %}
         </div>
     </div>

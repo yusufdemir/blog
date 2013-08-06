@@ -1,16 +1,19 @@
-body{background-color: black;}
+body{
+    background-color: black;
+    font-family:fantasy;
+}
+
 #menu a:hover{color: white;text-decoration:none;font-weight: bold;}
 #menu a:active{color: white;text-decoration:none;}
 #menu a:visited{color: white;text-decoration:none;}
 #menu a:link{color: white;text-decoration:none;}
+
 #container{
     width:900px;
     min-height:500px;
     margin:0 auto;
     background-color:white;
 }
-
-
 
 #top{
     width:900px;
@@ -56,18 +59,18 @@ body{background-color: black;}
 }
 
 #loginbox{
-    width: 190px;
-    min-height: 50px;
+    width: 200px;
+    min-height: 25px;
     background-color: slategray;
     margin-left: 10px;
     border-radius: 5px;
     float: left ;
     margin-bottom: 10px;
-    padding: 5px;
     font-size: 12px;
     color: white;
     text-align: center;
     padding-top: 15px;
+    padding-bottom: 15px;
 }
 #loginbox a:link {
     text-align: center;
@@ -76,6 +79,7 @@ body{background-color: black;}
     line-height:15px;
     margin-bottom: 2px;
     font-size: 12px;
+    text-decoration: none;
 }
 
 #loginbox a:hover{
@@ -84,26 +88,30 @@ body{background-color: black;}
 
 #categories{
     width: 200px;
-    height: 250px;
+    min-height: 50px;
     background-color: slategray;
     margin-left: 10px;
     border-radius: 5px;
     float: left ;
     padding-top: 10px;
     margin-bottom: 10px;
+    font-size: 12px;
 }
 
 #categories a:link {
     text-align: center;
     color: white;
     display: block;
-    line-height: 25px;
+    line-height: 15px;
     margin-bottom: 2px;
-    font-size: 14px;
+    font-size: 12px;
+    text-decoration: none;
 }
 
 #categories a:hover{
     background-color: cornflowerblue;
+    font-size: 14px;
+    font-weight: inherit;
 }
 
 #container a:visited{
@@ -139,7 +147,6 @@ body{background-color: black;}
  #content:hover{  }
 
  .title{
-     font-family: "Lucida Grande";
      font-size: 18px;
      font-weight: bold;
      clear: both;
@@ -150,7 +157,6 @@ body{background-color: black;}
  }
 
  .text{
-     font-family: "Lucida Grande";
      font-size: 12px;
      clear: both;
      padding:0 10px 0 10px;
@@ -163,7 +169,6 @@ body{background-color: black;}
      background-color: darkgray;
      border-radius: 5px;
      margin:10px 0 10px 30px;
-     font-family: "Lucida Grande";
      font-size: 11px;
      clear: both;
      padding:0 10px 5px 10px;
@@ -171,7 +176,6 @@ body{background-color: black;}
  }
 
 #comment .title {
-     font-family: "Lucida Grande";
      font-size: 13px;
      font-weight: bold;
      clear: both;
@@ -182,7 +186,6 @@ body{background-color: black;}
 }
 
 #comment .text{
-     font-family: "Lucida Grande";
      font-size: 12px;
      clear: both;
      padding:0 10px 0 10px;
@@ -195,7 +198,6 @@ body{background-color: black;}
      background-color: lightgray;
      border-radius: 5px;
      margin:10px 0 5px 25px;
-     font-family: "Lucida Grande";
      font-size: 11px;
      clear: both;
      padding:5px 10px 5px 10px;
@@ -203,7 +205,6 @@ body{background-color: black;}
  }
 
 #comments .title {
-     font-family: "Lucida Grande";
      font-size: 13px;
      font-weight: bold;
      clear: both;
@@ -214,7 +215,6 @@ body{background-color: black;}
 }
 
 #comments .text{
-     font-family: "Lucida Grande";
      font-size: 12px;
      clear: both;
      padding:0 10px 0 10px;

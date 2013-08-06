@@ -1,3 +1,5 @@
+from django.utils.translation import ugettext
+
 __author__ = 'yusuf'
 from post.models import mCategories
 def categories(request):
@@ -5,5 +7,5 @@ def categories(request):
     return {'cat': cat}
 
 def loginForm(request):
-    form = "test form text"
+    form = ugettext("Login")
     return {'loginform':form}
