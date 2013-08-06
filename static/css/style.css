@@ -131,7 +131,7 @@ body{
 
  #content{
     width: 625px;
-    min-height: 100px;
+    min-height: 20px;
     margin:5px auto 5px auto;
     padding:5px 5px 10px 5px ;
     background-color: white;
@@ -221,6 +221,25 @@ body{
      margin-bottom: 10px;
 }
 
+.midle{
+    text-align:center;
+    color: firebrick;
+}
+
+.edit {
+    text-align: right;
+    float: right;
+    font-size: 10px;
+}
+.edit a{
+    text-decoration: none;
+    color:black;
+}
+
+.edit a img:hover{
+    width: 20px;
+    height: 20px;
+}
  #footer{
     width:900px;
     height:100px;

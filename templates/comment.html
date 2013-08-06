@@ -1,7 +1,20 @@
-
+{% load i18n %}
 <div id="comment">
     <div class="title">
         {{ commenty.title }}
+        {% if user.is_authenticated %}
+            <span class="edit">
+                <a href="/commentate/sub/{{ commenty.id }}">
+                    <img src="/static/graphic/comment.png" width="16" height="16">
+                </a>
+
+                <a href="/commentate/sub/{{ commenty.id }}">
+                    {% if p.user_id == user.id %}
+                        <img src="/static/graphic/comment2.png" width="16" height="16">
+                    {% endif %}
+                </a>
+            </span>
+        {% endif %}
     </div>
     <div class="text">
         {{ commenty.text }}

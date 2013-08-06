@@ -43,42 +43,22 @@
               {% if user.first_name == "" %}
                 {{ user.email }}
                 <br><br>
-                <a href="/profile/"> {% trans "Create a Profile" %}</a>
+                <a href="/profile/"> {% trans "Create a New Profile" %}</a>
               {% else %}
                 {{ user.first_name }}
               {% endif %}
+                <br>
+
+                <a href="/mypost/">{% trans "My Post" %}</a>
+                <a href="/sendpost/">{% trans "Send Post" %}</a>
+                <a href="/profile/">{% trans "Profile" %}</a>
                 <a href="/logout/">{% trans "Logout" %}</a>
           {% endif %}
         </div>
     </div>
     <div id="contents">
 
-        <div id="content">
-            <div class="title">
-                Title
-            </div>
-            <div class="text">
-                Lorem ipsum
-            </div>
 
-            <div id="comment">
-                <div class="title">
-                    Author
-                </div>
-                <div class="text">
-                    Test comment
-                </div>
-                <div id="comments">
-                    <div class="title">
-                        Author
-                    </div>
-                    <div class="text">
-                        Test comments
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
         {% block Content %}
         {% endblock %}

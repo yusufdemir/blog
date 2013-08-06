@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block page %}Index{% endblock %}
+
+{% block Content %}
+    {% for p in post reversed %}
+        <div id="content">
+            <div class="title">
+                {{ p.title }}
+            </div>
+            <div class="text">
+                {{ p.text }}
+            </div>
+        <br>
+
+
+        <div id="comment">
+            <div class="title">
+                {% trans "Send Comment: " %}
+            </div>
+            <div class="text">
+                <form action="#" method="post">
+                    {% trans "Title" %}<br>
+                    <input type="text" name="title" maxlength="120" ><br>
+                    {% trans "Message" %}:<br>
+                    <textarea name="message" rows="5" cols="20"></textarea><br>
+                    <input type="submit" value="{% trans "send" %}">
+                </form>
+            </div>
+        </div>
+
+
+
+                 {% for commenty in p.comments.all %}
+                    {% include "comment.html" %}
+                 {% endfor %}
+
+        </div>
+    {% endfor %}
+
+{% endblock %}

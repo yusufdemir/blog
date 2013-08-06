@@ -1,14 +1,19 @@
 {% extends "base.html" %}
-
+{% load i18n %}
 
 {% block Content %}
     <div id ="content">
 
-    <form method="post" action="/regpost/">
-        {% csrf_token %}
 
-        {{ form.as_p }}<br>
-        <input type="submit" value="gönder">
-    </form>
+        {% if user.is_authenticated %}
+            <form method="post" action="/regpost/">
+                {% csrf_token %}
+                    {{ form.as_p }}
+                <input type="submit" value="gönder">
+            </form>
+        {% else %}
+            <span class="midle">{% trans "*Required Login" %}</span>
+        {% endif %}
+
     </div>
 {% endblock %}
