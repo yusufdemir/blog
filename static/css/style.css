@@ -48,6 +48,12 @@ body{background-color: black;}
     border-radius: 5px;
     border:1px solid whitesmoke;
 }
+#cat_sabit {
+    width: 210px;
+    min-height: 300px;
+    float:left;
+    background-color: white;
+}
 
 #categories{
     width: 200px;
@@ -56,6 +62,25 @@ body{background-color: black;}
     margin-left: 10px;
     border-radius: 5px;
     float: left ;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+#categories a:link {
+    text-align: center;
+    color: white;
+    display: block;
+    line-height: 25px;
+    margin-bottom: 2px;
+    font-size: 14px;
+}
+
+#categories a:hover{
+    background-color: cornflowerblue;
+}
+
+#container a:visited{
+    color: white;
 }
 
 #contents{

@@ -126,13 +126,14 @@ INSTALLED_APPS = (
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'account.context_processors.categories',
     "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     "django.core.context_processors.static",
     "django.contrib.messages.context_processors.messages",
+    'account.context_processors.categories',
+    'account.context_processors.loginForm',
 )
 
 # A sample logging configuration. The only tangible logging

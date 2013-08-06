@@ -19,17 +19,28 @@
             {% endif %}
             <a href="/index/">{% trans "HOME" %}</a>
             <a href="/categories/">{% trans "CATEGORIES" %}</a>
+            <a href="/info/">{% trans "INFO" %}</a>
+            <a href="/contact/">{% trans "CONTACT" %}</a>
 
         {% endif %}
     </div>
+    <div id="cat_sabit">
+        <div id="categories">
+            {% for i in cat %}
+                <a href="/cat/{{ i.id }}" >{{ i }}</a>
+                <br>
+            {% endfor %}
 
-    <div id="categories">
-        {{ cat }}
-        Test1<br>
-        test2<br>
-        test3<br>
+        </div>
+
+        <div id="categories">
+          {% if not user.is_authenticated %}
+            {{ loginform }}
+          {% else %}
+              {% trans "Welcome" %} {{ first_name }}
+          {% endif %}
+        </div>
     </div>
-
     <div id="contents">
 
         <div id="content">
