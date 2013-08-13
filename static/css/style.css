@@ -163,6 +163,16 @@ body{
      margin-bottom: 10px;
  }
 
+#content .title a{
+    color:black;
+    text-decoration: none;
+}
+
+#content .title a:hover{
+    color:cadetblue;
+    text-decoration: none;
+}
+
 #comment{
      width: 570px;
      min-height: 40px;
@@ -184,6 +194,7 @@ body{
      padding:5px 10px 0 10px;
      text-transform: capitalize;
 }
+
 
 #comment .text{
      font-size: 12px;
@@ -213,6 +224,8 @@ body{
      padding:0 10px 0 10px;
      text-transform: capitalize;
 }
+
+
 
 #comments .text{
      font-size: 12px;

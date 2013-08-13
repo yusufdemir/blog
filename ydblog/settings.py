@@ -173,3 +173,4 @@ AUTHENTICATION_BACKENDS = ('account.views.EmailAuthBackend',)
 
 LOGIN_REDIRECT_URL = '/index/'
 AUTH_PROFILE_MODULE = 'accounts.Profile'
+LOGIN_URL = '/login/'

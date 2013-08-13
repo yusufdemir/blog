@@ -24,5 +24,6 @@ urlpatterns = patterns('',
     url(r'^index/$','post.views.index'),
     url(r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^cat/(?P<cat_id>\d+)/$','post.views.catview'),
+    url(r'^detail/(?P<post_id>\d+)/$','post.views.postdetailview'),
     url(r'^jsi18n/(?P<packages>\S+?)/$', 'django.views.i18n.javascript_catalog'),
 )

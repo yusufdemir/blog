@@ -5,15 +5,15 @@
     <div id ="content">
 
 
-        {% if user.is_authenticated %}
+
             <form method="post" action="/sendpost/">
                 {% csrf_token %}
-                    {{ form }}
+                    {{ form.as_p }}
                 <input type="submit" value="gönder">
             </form>
-        {% else %}
+
             <span class="midle">{% trans "*Required Login" %}</span>
-        {% endif %}
+
 
     </div>
 {% endblock %}

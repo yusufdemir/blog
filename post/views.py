@@ -1,10 +1,11 @@
 # Create your views here.
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from django.template import RequestContext
 from post.forms import *
 
-
+@login_required
 def PostView(request):
     if request.method == 'POST':
         form = PostForm(request.POST )
@@ -24,7 +25,15 @@ def index(request):
 
 
 def catview(request, cat_id):
-    post = mPost.objects.filter(mPost.cat.pk == cat_id)
+    post = mPost.objects.filter(cat__pk = cat_id)
+    ctx = {
+        'post': post
+    }
+    return render(request, 'categories.html', ctx)
+
+
+def postdetailview(request, post_id):
+    post = mPost.objects.filter(pk = post_id)
     ctx = {
         'post': post
     }

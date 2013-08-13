@@ -2,7 +2,6 @@
 __author__ = 'yusuf'
 
 from django import forms
-from account.models import *
 from post.models import *
 
 
