@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from django.template import RequestContext
 from post.forms import *
+from account.views import EmailAuthBackend
 
 @login_required
 def PostView(request):
@@ -29,7 +30,7 @@ def catview(request, cat_id):
     ctx = {
         'post': post
     }
-    return render(request, 'categories.html', ctx)
+    return render(request, 'index.html', ctx)
 
 
 def postdetailview(request, post_id):
@@ -37,4 +38,11 @@ def postdetailview(request, post_id):
     ctx = {
         'post': post
     }
-    return render(request, 'categories.html', ctx)
+    return render(request, 'index.html', ctx)
+@login_required()
+def mypost(request):
+    post = mPost.objects.filter(user__pk =request.user.id)
+    ctx = {
+        'post': post
+    }
+    return render(request, 'index.html', ctx)

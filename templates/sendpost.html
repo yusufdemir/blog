@@ -3,17 +3,10 @@
 
 {% block Content %}
     <div id ="content">
-
-
-
             <form method="post" action="/sendpost/">
                 {% csrf_token %}
                     {{ form.as_p }}
                 <input type="submit" value="gönder">
             </form>
-
-            <span class="midle">{% trans "*Required Login" %}</span>
-
-
     </div>
 {% endblock %}

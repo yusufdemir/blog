@@ -39,24 +39,24 @@
         <div id="loginbox">
 
             {% if not user.is_authenticated %}
-            {% trans "Welcome Guest" %}<br><br>
-            <a href="/register/">{% trans "Sing in" %}</a>
-            <a href="/login/">{% trans "Sing up" %}</a>
-          {% else %}
-              {% trans "Welcome" %}<br>
-              {% if user.first_name == "" %}
-                {{ user.email }}
-                <br><br>
-                <a href="/profile/"> {% trans "Create a New Profile" %}</a>
-              {% else %}
-                {{ user.first_name }}
-              {% endif %}
-                <br>
+                {% trans "Welcome Guest" %}<br><br>
+                <a href="/register/">{% trans "Sing in" %}</a>
+                <a href="/login/">{% trans "Sing up" %}</a>
+            {% else %}
+                  {% trans "Welcome" %}<br>
+                  {% if user.first_name == "" %}
+                    {{ user.email }}
+                    <br><br>
+                    <a href="/profile/"> {% trans "Create a New Profile" %}</a>
+                  {% else %}
+                    {{ user.first_name }}
+                  {% endif %}
+                    <br>
 
-                <a href="/mypost/">{% trans "My Post" %}</a>
-                <a href="/sendpost/">{% trans "Send Post" %}</a>
-                <a href="/profile/">{% trans "Profile" %}</a>
-                <a href="/logout/">{% trans "Logout" %}</a>
+                    <a href="/mypost/">{% trans "My Post" %}</a>
+                    <a href="/sendpost/">{% trans "Send Post" %}</a>
+                    <a href="/profile/">{% trans "Profile" %}</a>
+                    <a href="/logout/">{% trans "Logout" %}</a>
           {% endif %}
         </div>
     </div>
