@@ -6,9 +6,9 @@
 
 
         {% if user.is_authenticated %}
-            <form method="post" action="/regpost/">
+            <form method="post" action="/sendpost/">
                 {% csrf_token %}
-                    {{ form.as_p }}
+                    {{ form }}
                 <input type="submit" value="gönder">
             </form>
         {% else %}

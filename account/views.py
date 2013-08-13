@@ -4,7 +4,6 @@ from django.core.context_processors import request
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from django.template import RequestContext
-from account.forms import *
 from django.contrib.auth.models import User, check_password
 from forms import SignUpForm
 from random import choice
@@ -53,7 +52,5 @@ def register(request):
 
     return render_to_response('login.html', {'form':form},
                               context_instance=RequestContext(request))
-
-
 
 

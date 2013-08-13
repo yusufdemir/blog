@@ -250,3 +250,7 @@ body{
     text-align: center;
      margin-top: 20px;
 }
+
+ .boxheader{
+     color:white;text-align: center;display: block; font-size: 15px;
+ }

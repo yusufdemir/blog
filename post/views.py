@@ -1,19 +1,17 @@
 # Create your views here.
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404, HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404, render, redirect
 from django.template import RequestContext
 from post.forms import *
-from post.models import *
 
 
 def PostView(request):
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST )
         if form.is_valid():
-            cleaned = form.cleaned_data
-            form.save()
-            return HttpResponseRedirect('/kayittamam/')
-        return render_to_response("sendpost.html", {'form':PostForm},
+            form.save(user=request.user)
+            return HttpResponseRedirect('/index/')
+        return render_to_response("sendpost.html", {'form': form},
                                   context_instance=RequestContext(request))
     form = PostForm()
     return render(request, "sendpost.html", {'form': form})
@@ -24,3 +22,10 @@ def index(request):
     ctx = {'post': post}
     return render(request, 'index.html', ctx)
 
+
+def catview(request, cat_id):
+    post = mPost.objects.filter(mPost.cat.pk == cat_id)
+    ctx = {
+        'post': post
+    }
+    return render(request, 'categories.html', ctx)
