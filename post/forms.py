@@ -3,6 +3,7 @@ __author__ = 'yusuf'
 
 from django import forms
 from post.models import *
+from account.models import Profile
 
 
 class PostForm(forms.ModelForm):
@@ -16,3 +17,10 @@ class PostForm(forms.ModelForm):
     def save(self, *args, **kwargs):
         self.instance.user = kwargs.pop('user')
         super(PostForm, self).save()
+
+class userProfileForm(forms.ModelForm):
+
+    class Meta:
+        model=Profile
+        fields = ['first_name','last_name','image', 'phone', 'job']
+
