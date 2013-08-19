@@ -10,17 +10,17 @@ class PostForm(forms.ModelForm):
 
     class Meta:
         model = mPost
-        fields = ['cat','title','text','tags']
+        fields = ['cat', 'title', 'text']
         #widgets = {'user':forms.HiddenInput}
-
 
     def save(self, *args, **kwargs):
         self.instance.user = kwargs.pop('user')
         super(PostForm, self).save()
 
+
 class userProfileForm(forms.ModelForm):
 
     class Meta:
-        model=Profile
-        fields = ['first_name','last_name','image', 'phone', 'job']
+        model = Profile
+        fields = ['first_name', 'last_name', 'image', 'phone', 'job']
 

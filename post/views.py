@@ -9,7 +9,7 @@ from account.views import *
 @login_required
 def PostView(request):
     if request.method == 'POST':
-        form = PostForm(request.POST )
+        form = PostForm(request.POST)
         if form.is_valid():
             form.save(user=request.user)
             return HttpResponseRedirect('/index/')
@@ -27,10 +27,10 @@ def profileFormView(request):
             username = request.user.username
             form.save()
             return HttpResponseRedirect('/profile/')
-        return render_to_response("profile.html",{'form':form},
+        return render_to_response("profile.html", {'form': form},
                                   context_instance=RequestContext(request))
     form = userProfileForm()
-    return render(request,"profile.html",{'form':form})
+    return render(request, "profile.html", {'form': form})
 
 
 def index(request):
@@ -53,6 +53,7 @@ def postdetailview(request, post_id):
         'post': post
     }
     return render(request, 'index.html', ctx)
+
 
 @login_required()
 def mypost(request):
