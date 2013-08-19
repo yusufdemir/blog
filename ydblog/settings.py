@@ -123,7 +123,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'account',
     'post',
-)
+) 
 
 
 
